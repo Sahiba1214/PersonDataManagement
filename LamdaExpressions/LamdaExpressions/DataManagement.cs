@@ -22,7 +22,16 @@ namespace PersonDataManagement
         }
         public void RetreivingTopTwoRecords_ForAgeIs_LessThanSixty(List<Person> listPersonsInCity)
         {
+            Console.WriteLine("The Top 2 persons whose age less than 60 are : ");
             foreach (Person person in listPersonsInCity.FindAll(x => (x.Age < 60)).Take(2).ToList())
+            {
+                Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
+            }
+        }
+        public void CheckingForTeenagerPerson(List<Person> listPersonsInCity)
+        {
+            Console.WriteLine("The Teenagers Persons in the list are : ");
+            foreach (Person person in listPersonsInCity.FindAll(x => (x.Age >= 13 && x.Age < 19)).ToList())
             {
                 Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
             }
