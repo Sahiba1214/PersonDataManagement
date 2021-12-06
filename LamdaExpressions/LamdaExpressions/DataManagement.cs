@@ -20,6 +20,7 @@ namespace PersonDataManagement
             listPersonsInCity.Add(new Person("173092021", "Minu", "Fatma, Delhi", 24));
             listPersonsInCity.Add(new Person("173102021", "Rizwana", "Fatma, Varanasi", 44));
         }
+
         public void RetreivingTopTwoRecords_ForAgeIs_LessThanSixty(List<Person> listPersonsInCity)
         {
             Console.WriteLine("The Top 2 persons whose age less than 60 are : ");
@@ -35,6 +36,11 @@ namespace PersonDataManagement
             {
                 Console.WriteLine("Name : " + person.Name + "\t\tAge : " + person.Age);
             }
+        }
+        public void RetrieveAverageAge(List<Person> listPersonsInCity)
+        {
+            double averageAge = listPersonsInCity.Average(x => x.Age);
+            Console.WriteLine("The Average age of all Persons in the list are : " + averageAge);
         }
     }
 }
